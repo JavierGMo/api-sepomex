@@ -21,6 +21,13 @@ def getEstadoById(id):
 
     return estadoSchema.jsonify(estado)
 
+@estadoBP.route("/estadonombre/<string:nombre>")
+def getEstadoByName(nombre):
+    estadosSchema = EstadoSchema(many=True)
+    estados = Estado.getEstadoByName(nombre)
+
+    return estadosSchema.jsonify(estados)
+
 @estadoBP.route("/estado/", methods=['Post'])
 def createEstado():
     id = request.json['id']

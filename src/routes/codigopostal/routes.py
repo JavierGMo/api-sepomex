@@ -16,3 +16,14 @@ def getCPById(id):
     # model
     codigoPostal = CodigoPostal.getCPById(id)
     return codigoPostalSchema.jsonify(codigoPostal)
+
+@codigoPostalBP.route("/codigopostal/", methods=['Post'])
+def createCodigoPostal():
+    id = request.json['id']
+    nuevoCodigoPostal = CodigoPostal(id)
+    nuevoCodigoPostal.createCP()
+    
+    return jsonify({
+        'ok' : True,
+        'message' : 'Creado con exito'
+    })

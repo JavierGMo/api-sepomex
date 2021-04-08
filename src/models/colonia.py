@@ -29,3 +29,12 @@ class Colonia(db.Model):
     @staticmethod
     def getColoniaById(id):
         return Colonia.query.get(id)
+
+    @staticmethod
+    def getColoniaByCP(idcp):
+        #return Colonia.query.filter(Colonia.idcp==idcp).first()
+        res = Colonia.query.filter(Colonia.idcp==idcp)
+        return res.all()
+    @staticmethod
+    def getColoniaByName(nombre):
+        return Colonia.query.filter(Colonia.nombre.like('%{}%'.format(nombre))).all()

@@ -15,12 +15,20 @@ def getColoniaById(id):
     colonia = Colonia.getColoniaById(id)
     return coloniaSchema.jsonify(colonia)
 
+@coloniaBP.route("/colonianombre/<string:nombre>", methods=['Get'])
+def getColoniaByName(nombre):
+    coloniasSchema = ColoniaSchema(many=True)
+    colonias = Colonia.getColoniaByName(nombre)
+    return coloniasSchema.jsonify(colonias)
+
 @coloniaBP.route("/colonia/", methods=['Post'])
 def createColonia():
+    
     id = request.json['id']
     nombre = request.json['nombre']
     idmunicipio = request.json['idmunicipio']
     idcp = request.json['idcp']
+    
     nuevaColonia = Colonia(id, nombre, idmunicipio, idcp)
     nuevaColonia.createMunicipio()
 
@@ -28,3 +36,9 @@ def createColonia():
         'ok' : True,
         'message' : 'Colonia creada'
     })
+
+@coloniaBP.route("/coloniacp/<int:idcp>")
+def getColoniaByCP(idcp):
+    coloniasSchema = ColoniaSchema(many=True)
+    colonia = Colonia.getColoniaByCP(idcp)
+    return coloniasSchema.jsonify(colonia)

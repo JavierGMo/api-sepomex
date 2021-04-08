@@ -22,3 +22,7 @@ class Estado(db.Model):
     @staticmethod
     def getEstadoById(id):
         return Estado.query.get(id)
+    
+    @staticmethod
+    def getEstadoByName(nombre):
+        return Estado.query.filter(Estado.nombre.like('%{}%'.format(nombre))).all()

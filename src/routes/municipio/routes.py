@@ -14,8 +14,14 @@ def getAllMunicipios():
 @municipioBP.route("/municipio/<int:id>", methods=['Get'])
 def getMunicipioById(id):
     municipioSchema = MunicipioSchema()
-    municipio = Municipio.getEstadoById(id)
+    municipio = Municipio.getMunicipioById(id)
     return municipioSchema.jsonify(municipio)
+
+@municipioBP.route("/municipionombre/<string:nombre>", methods=['Get'])
+def getMunicipioByName(nombre):
+    municipiosSchema = MunicipioSchema(many=True)
+    municipios = Municipio.getMunicipioByName(nombre)
+    return municipiosSchema.jsonify(municipios)
 
 @municipioBP.route("/municipio/", methods=['Post'])
 def createMunicipio():

@@ -23,5 +23,9 @@ class Municipio(db.Model):
         return Municipio.query.all()
     
     @staticmethod
-    def getEstadoById(id):
+    def getMunicipioById(id):
         return Municipio.query.get(id)
+
+    @staticmethod
+    def getMunicipioByName(nombre):
+        return Municipio.query.filter(Municipio.nombre.like('%{}%'.format(nombre))).all()

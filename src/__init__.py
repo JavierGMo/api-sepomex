@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
@@ -14,6 +15,9 @@ def create_app(settingsModule):
     #Config app
     print("settings module: {}".format(settingsModule))
     app.config.from_object(settingsModule)
+    # Cors
+    cors = CORS(app)
+    app.config['CORS_HEADERS'] = 'Content-Type'
 
     # Base de datos
     db.init_app(app)
