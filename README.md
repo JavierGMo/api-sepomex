@@ -27,6 +27,7 @@ Windows
 - Instalar dependencias, en la terminal ejecutar lo siguiente: `pip install -r requirements.txt`
 
 ## Como usar en windows
+- Estar en la carpeta de api-sepomex
 - Crear el entorno virtual desde cmd: `py -3 -m venv venv`
 - Activar el entorno virtal : `.\venv\Scripts\activate.bat`
 - Instalar dependencias, en la terminal ejecutar lo siguiente: `pip install -r requirements.txt`
