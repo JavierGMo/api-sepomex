@@ -19,6 +19,9 @@ Windows
 - set "FLASK_ENV=development"
 - set "APP_SETTINGS_MODULE=config.local"
 
+## Clona el proyecto
+
+Tendras que clonar este proyecto con `git clone https://github.com/JavierGMo/api-sepomex`
 
 ## Como usar este proyecto en UBUNTU 18.04.5 LTS
 - Estar en la carpeta de api-sepomex
