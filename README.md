@@ -26,7 +26,7 @@ Tendras que clonar este proyecto con `git clone https://github.com/JavierGMo/api
 
 # Configurar la URI de la bd
 
-En el archivo local.py que esta en la carpeta config modificar la url con su usuario de base de datos y su respectica contraseña: `SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://user:password@localhost/sepomex'`
+En el archivo local.py que esta en la carpeta config modificar la url con su usuario de base de datos y su respectica contraseña: `SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://<tu_user>:<tu_password>@localhost/sepomex'`
 
 ## Como usar este proyecto en UBUNTU 18.04.5 LTS
 - Estar en la carpeta de api-sepomex
