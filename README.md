@@ -10,7 +10,7 @@
 ## Variables de entorno
 Crear las siguientes variables de entorno:
 Ubuntu:
-- export FLASK_APP="src"
+- export FLASK_APP="app"
 - export FLASK_ENV="development"
 - export APP_SETTINGS_MODULE="config.local"
 
@@ -22,6 +22,11 @@ Windows
 ## Clona el proyecto
 
 Tendras que clonar este proyecto con `git clone https://github.com/JavierGMo/api-sepomex`
+
+
+# Configurar la URI de la bd
+
+En el archivo local.py que esta en la carpeta config modificar la url con su usuario de base de datos y su respectica contraseña: `SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://user:password@localhost/sepomex'`
 
 ## Como usar este proyecto en UBUNTU 18.04.5 LTS
 - Estar en la carpeta de api-sepomex
